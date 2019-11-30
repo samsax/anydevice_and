@@ -2,7 +2,6 @@ package com.parse.anydevice.app;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 
 import com.parse.ParseAnalytics;
@@ -13,7 +12,11 @@ import com.parse.anydevice.login.ParseLoginActivity;
 import com.parse.anydevice.models.Installation;
 import com.parse.anydevice.registered.RegisteredDevicesActivity;
 
-public class MainActivity extends ActionBarActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+import static android.app.Activity.RESULT_OK;
+
+public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = MainActivity.class.getName();
     private static final int LOGIN_REQUEST_CODE = 1;

@@ -1,7 +1,7 @@
 package com.parse.anydevice.views;
 
 import android.content.Context;
-import android.support.annotation.LayoutRes;
+import androidx.annotation.LayoutRes;
 import android.util.AttributeSet;
 import android.view.View;
 

@@ -23,7 +23,7 @@ package com.parse.anydevice.login;
 
 import android.annotation.TargetApi;
 import android.os.Build;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.util.Log;
 import android.widget.Toast;
 

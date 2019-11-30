@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.wifi.ScanResult;
 import android.net.wifi.WifiManager;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;

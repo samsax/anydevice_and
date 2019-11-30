@@ -18,7 +18,7 @@
         android:id="@+id/device_add"
         style="@style/FabButton.Impl"/>
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         style="@style/Toolbar.Impl"/>
 

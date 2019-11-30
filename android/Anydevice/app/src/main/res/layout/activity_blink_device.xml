@@ -62,7 +62,7 @@
         android:id="@+id/error"
         style="@style/Details.Error.LastSeen.Impl"/>
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         style="@style/Toolbar.Impl"
         android:background="@android:color/transparent"/>

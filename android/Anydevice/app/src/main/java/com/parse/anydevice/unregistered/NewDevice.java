@@ -1,7 +1,7 @@
 package com.parse.anydevice.unregistered;
 
 import android.net.wifi.ScanResult;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.parse.anydevice.models.Model;
 

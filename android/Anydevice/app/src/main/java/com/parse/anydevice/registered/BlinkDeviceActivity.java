@@ -7,14 +7,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.Toolbar;
+import androidx.annotation.NonNull;
+import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.parse.ParseImageView;
 import com.parse.ParsePushBroadcastReceiver;
 import com.parse.ParseUser;
 import com.parse.anydevice.R;
@@ -42,8 +41,6 @@ public class BlinkDeviceActivity extends BaseDeviceDetailsActivity implements Vi
         put(R.id.led_off, "off");
         put(R.id.blink_led, "blink");
     }});
-
-    private ParseImageView deviceImage;
     private TextView deviceName;
     private TextView deviceType;
     private TextView deviceLastSeen;
@@ -57,7 +54,6 @@ public class BlinkDeviceActivity extends BaseDeviceDetailsActivity implements Vi
         setContentView(R.layout.activity_blink_device);
         setupToolbar();
         progressDialog = new UpdateProgressDialog(this);
-        deviceImage = (ParseImageView) findViewById(R.id.device_img);
         deviceName = (TextView) findViewById(R.id.device_name);
         deviceType = (TextView) findViewById(R.id.device_type);
         deviceLastSeen = (TextView) findViewById(R.id.device_last_seen);
@@ -84,7 +80,6 @@ public class BlinkDeviceActivity extends BaseDeviceDetailsActivity implements Vi
     protected void onUserSessionLoaded() {
         final String deviceName = installation.getDeviceName();
         final Model deviceModel = installation.getModel();
-        Model.putLogoIntoImageView(deviceModel, deviceImage, R.drawable.board_icon_details);
         this.deviceName.setText(deviceName);
         deviceType.setText(deviceModel.getBoardType());
         displayLastSeen();

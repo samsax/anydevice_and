@@ -1,10 +1,9 @@
 package com.parse.anydevice.provisioning;
 
-import android.support.annotation.NonNull;
-import android.support.v4.util.Pair;
+import androidx.annotation.NonNull;
+import androidx.core.util.Pair;
 
-import org.apache.http.NameValuePair;
-import org.apache.http.message.BasicNameValuePair;
+
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -20,8 +19,8 @@ import java.util.List;
 class Request {
     private static final String UTF8_ENCODING = "UTF-8";
 
-    private List<NameValuePair> params = new LinkedList<>();
-    private List<NameValuePair> headers = new LinkedList<>();
+    private List<Pair> params = new LinkedList<>();
+    private List<Pair> headers = new LinkedList<>();
     private String method, url;
     private String body = "";
 
@@ -43,12 +42,12 @@ class Request {
     }
 
     public Request param(String name, String value) {
-        params.add(new BasicNameValuePair(name, value));
+        params.add(new Pair(name, value));
         return this;
     }
 
     public Request header(String name, String value) {
-        headers.add(new BasicNameValuePair(name, value));
+        headers.add(new Pair(name, value));
         return this;
     }
 
@@ -71,8 +70,8 @@ class Request {
 
         final HttpURLConnection urlConnection = (HttpURLConnection) new URL(url).openConnection();
         urlConnection.setRequestMethod(method);
-        for (NameValuePair pair : headers) {
-            urlConnection.setRequestProperty(pair.getName(), pair.getValue());
+        for (Pair pair : headers) {
+            urlConnection.setRequestProperty(pair.first.toString(), pair.second.toString());
         }
         urlConnection.setDoInput(true);
         urlConnection.setDoOutput(true);
@@ -114,20 +113,20 @@ class Request {
      *
      * @throws UnsupportedEncodingException
      */
-    private static String getQuery(@NonNull final List<NameValuePair> params) throws UnsupportedEncodingException {
+    private static String getQuery(@NonNull final List<Pair> params) throws UnsupportedEncodingException {
         final StringBuilder result = new StringBuilder();
         boolean first = true;
 
-        for (NameValuePair pair : params) {
+        for (Pair pair : params) {
             if (first) {
                 first = false;
             } else {
                 result.append("&");
             }
 
-            result.append(URLEncoder.encode(pair.getName(), UTF8_ENCODING));
+            result.append(URLEncoder.encode(pair.first.toString(), UTF8_ENCODING));
             result.append("=");
-            result.append(URLEncoder.encode(pair.getValue(), UTF8_ENCODING));
+            result.append(URLEncoder.encode(pair.second.toString(), UTF8_ENCODING));
         }
 
         return result.toString();

@@ -5,8 +5,8 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.v7.app.ActionBarActivity;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -25,7 +25,7 @@ import com.parse.anydevice.models.UserSession;
  * <p/>
  * Devices are identified by their {@link Installation} and {@link UserSession} which references an Installation UUID.
  */
-public abstract class BaseDeviceDetailsActivity extends ActionBarActivity {
+public abstract class BaseDeviceDetailsActivity extends AppCompatActivity {
     private static final String TAG = BaseDeviceDetailsActivity.class.getSimpleName();
     private static final String INSTALLATION_ID = "installationId";
 

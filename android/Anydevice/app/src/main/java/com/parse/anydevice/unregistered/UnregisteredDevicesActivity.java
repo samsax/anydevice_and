@@ -1,12 +1,12 @@
 package com.parse.anydevice.unregistered;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.Toolbar;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -19,7 +19,7 @@ import java.util.List;
 /**
  * Activity for finding and provisioning available devices
  */
-public class UnregisteredDevicesActivity extends ActionBarActivity implements NewDeviceListAdapter.OnDeviceAddClickListener, AccessPointDiscovery.Callback {
+public class UnregisteredDevicesActivity extends AppCompatActivity implements NewDeviceListAdapter.OnDeviceAddClickListener, AccessPointDiscovery.Callback {
     private static final String ADD_DEVICE_DIALOG_TAG = "addDeviceDialog";
 
     private AccessPointDiscovery discovery;

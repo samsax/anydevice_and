@@ -1,17 +1,17 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 22
-    buildToolsVersion "22"
+    compileSdkVersion 28
+    buildToolsVersion "22.0.1"
 
     defaultConfig {
         applicationId "com.parse.anydevice"
         minSdkVersion 16
-        targetSdkVersion 22
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-        buildConfigField "String", "PARSE_APP_ID", "\"YOUR_APPLICATION_ID\""
-        buildConfigField "String", "PARSE_CLIENT_KEY", "\"YOUR_PARSE_CLIENT_KEY\""
+        buildConfigField "String", "PARSE_APP_ID", "\"domoticaVillahermosa\""
+        buildConfigField "String", "PARSE_CLIENT_KEY", "\"Villahermosa\""
     }
 
     signingConfigs {
@@ -22,10 +22,8 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:recyclerview-v7:22.0.+'
-    compile "com.android.support:support-v4:22.0.+"
-    compile "com.android.support:appcompat-v7:22.0.+"
-
-    compile 'com.parse.bolts:bolts-android:1.1.4'
-    compile fileTree(dir: 'libs', include: 'Parse-*.jar')
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation "com.android.support:support-core-utils:28.0.0"
+    implementation "com.github.parse-community.Parse-SDK-Android:parse:1.22.1"
 }

@@ -14,7 +14,7 @@
     <!--Application theme for pages with toolbar-->
     <style name="Theme.App.NoActionBar" parent="Theme.App.Impl">
         <item name="windowActionBar">false</item>
-        <item name="android:windowNoTitle">true</item>
+        <item name="windowNoTitle">true</item>
     </style>
 
     <style name="Theme.App.NoActionBar.Impl"></style>

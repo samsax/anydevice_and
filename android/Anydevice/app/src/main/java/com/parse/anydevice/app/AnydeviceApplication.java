@@ -25,6 +25,11 @@ public class AnydeviceApplication extends Application {
 
         // Initialize Parse
         Parse.setLogLevel(Parse.LOG_LEVEL_DEBUG);
-        Parse.initialize(this, Constants.PARSE_APP_ID, Constants.PARSE_CLIENT_KEY);
+        Parse.initialize(new Parse.Configuration.Builder(this)
+                        .applicationId(Constants.PARSE_APP_ID)
+                        // if defined
+                        .clientKey(Constants.PARSE_CLIENT_KEY)
+                        .server("https://parse-domotica.herokuapp.com/parse")
+                        .build());
     }
 }

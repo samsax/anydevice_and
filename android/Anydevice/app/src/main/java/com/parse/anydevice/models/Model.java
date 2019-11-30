@@ -1,11 +1,10 @@
 package com.parse.anydevice.models;
 
-import android.support.annotation.DrawableRes;
-import android.support.annotation.NonNull;
+import androidx.annotation.DrawableRes;
+import androidx.annotation.NonNull;
 
 import com.parse.ParseClassName;
 import com.parse.ParseFile;
-import com.parse.ParseImageView;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
@@ -36,19 +35,7 @@ public class Model extends ParseObject {
         return getString(APP_NAME);
     }
 
-    /**
-     * Helper to put image from URL in ImageView
-     *
-     * @param model         {@link Model}
-     * @param imageView     ParseImageView to have application logo
-     * @param drawableRes   Drawable for the placeholder icon
-     */
-    public static void putLogoIntoImageView(final Model model, @NonNull final ParseImageView imageView, @DrawableRes final int drawableRes) {
-        final ParseFile imagePtr = (ParseFile) model.get(Model.ICON);
-        imageView.setPlaceholder(imageView.getResources().getDrawable(drawableRes));
-        imageView.setParseFile(imagePtr);
-        imageView.loadInBackground();
-    }
+
 
     /**
      * Helper to create a query with a cache

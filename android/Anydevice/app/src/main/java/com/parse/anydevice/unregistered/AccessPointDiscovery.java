@@ -3,7 +3,7 @@ package com.parse.anydevice.unregistered;
 import android.content.Context;
 import android.content.IntentFilter;
 import android.net.wifi.WifiManager;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.util.Log;
 
 import java.util.List;

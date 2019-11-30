@@ -6,10 +6,10 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.Toolbar;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.appcompat.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,7 +23,7 @@ import com.parse.anydevice.models.Installation;
 import com.parse.anydevice.unregistered.UnregisteredDevicesActivity;
 import com.parse.anydevice.views.EmptyStateRecyclerView;
 
-public class RegisteredDevicesActivity extends ActionBarActivity implements RegisteredDeviceListAdapter.OnDeviceClickListener {
+public class RegisteredDevicesActivity extends AppCompatActivity implements RegisteredDeviceListAdapter.OnDeviceClickListener {
     private RegisteredDeviceListAdapter adapter;
     private BroadcastReceiver eventReceiver = new BroadcastReceiver() {
         @Override
